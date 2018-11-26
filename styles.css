@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #e77a7d;
+    --lightgray: #c2cad0;
+    --gray: #c2b9b0;
+    --brown: #7e685a;
+    --green: #afd275;
+    --blue: #99bbff;
+}
+
+#css-zen-garden {
+    margin: 0;
+}
+
+.intro, .main {
+    border-left: solid black 1px;
+}
+
+.sidebar {
+    border-right: solid black 1px;
+}
+
+h1, h2, h3, p {
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+h3 {
+    padding: 25px;
+}
+
+p {
+    padding: 0 25px;
+    font-size: 1.2em;
+    color: white;
+}
+
+a {
+    font-size: 1em;
+    text-decoration: none;
+    color: var(--green);
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/**************   Main grid layout ****************/
+
+.page-wrapper {
+    margin: 0 8%;
+    display: grid;
+    grid-template-areas:    "intro sidebar"
+                            "main sidebar";
+    grid-template-columns: 1fr 250px;
+    grid-template-rows: auto;
+}
+
+.intro {
+    grid-area: intro;
+}
+
+.main {
+    grid-area: main;
+    
+    background: var(--gray);
+}
+
+.sidebar {
+    grid-area: sidebar;
+    
+    background: var(--pink);
+}
+
+/**************  Intro  **************/
+
+.intro > * {
+    padding: 25px 0;
+}
+
+[role="banner"] {
+    text-align: center;
+    background: var(--blue);
+}
+
+.summary {
+    background: var(--brown);
+}
+
+.preamble {
+    background: var(--green);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+
+/****************  Sidebar *********************/
+
+.sidebar {
+    padding: 100px 25px 0 0;
+}
+
+.sidebar h3 {
+    padding-left: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar li {
+    margin: 30px 0;
+    padding: 0;
+    text-align: center;
+}
+
+.sidebar a {
+    color: var(--green);
+    text-transform: uppercase;
+}
+
+.design-selection a:last-child {
+    color: white;
+}
+
+.design-archives {
+    margin: 150px 0;
+}
+
+/************* Main *******************/
+
+.main h3 {
+    transition: padding-left .4s cubic-bezier(.2, -.42, .83, 1.68);
+}
+
+.main:hover h3:first-child {
+    animation: none;
+}
+
+.main > div:hover h3 {
+    padding-left: 43%;
+}
+
+footer {
+    height: 100px;
+    background: var(--brown);
+    display: flex;
+}
+
+footer a {
+    margin: auto;
+    font-size: 1.3em;
+}
+
+footer a:first-child {
+    margin-left: 25%;
+}
+
+footer a:last-child {
+    margin-right: 25%;
+}
